@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg" style="background-color: #11373f;">
+        <div class="head form-inline justify-content-between" style="background-color: #11373f;">
+            <a class="logo" href=""><img src="./img/logo.PNG"></a>
+            <form class="form-inline">
+                    <input class="form-control ml-auto my-3" type="search" placeholder="Search..." aria-label="Search" style="width: 20vw; border: none; border-radius: 10px;">
+                    <button class="btn btn-outline-light mr-2 ml-2 my-3" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="icon">
+                        <a href=""><i id="Icon1" class="fab fa-twitter fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon2" class="fab fa-instagram fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon3" class="fab fa-facebook-square fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon4" class="fas fa-share-alt-square fa-lg mx-2 my-1"></i></a>
+                    </div>
+            </form>
+        </div>
+
+        <nav class="navbar navbar-expand-xl">
+    
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+    
+            <div class="collapse navbar-collapse text-center ml-2" id="navbarNav">
+                <ul class="navbar-nav justify-content-around pb-0" style="width:100%; border-bottom: 1px solid white">
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">產品介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">精選食譜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="intro" class="carousel slide">
+            <!-- <ol class="carousel-indicators">
+                <li data-target="#intro" data-slide-to="0" class="active"></li>
+                <li data-target="#intro" data-slide-to="1"></li>
+                <li data-target="#intro" data-slide-to="2"></li>
+            </ol> -->
+            <div class="carousel-inner">
+                <div class="carousel-item active row">
+                    <img src="./img/Chef Portrait_ Ludo Lefebvre of Trois Mec - Life & Thyme.jpg" class="col-md-7 d-block mr-auto ml-0 p-0" alt="">
+                    <div class="col-md-3 carousel-caption text-left d-none d-md-block mr-0 ml-auto">
+                        <div class="title1">Ours Persistence</div>
+                        <div class="content1 p-2">
+                            <p>在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/Tasty Social_ How Restaurants Can Win On Social Media And Reach More Customers.jpg" class="col-md-7 d-block mr-0 ml-auto p-0" alt="">
+                    <div class="col-md-3 carousel-caption text-left d-none d-md-block mr-auto ml-0 h-100" style="padding-top: 20%;">
+                        <div class="content2 p-2">
+                            <p>在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/Great British Chefs Cookbook - Great British Chefs.jpg" class="col-md-7 d-block mr-auto ml-auto p-0" alt="">
+                    <div class="col-md-3 carousel-caption text-left d-none d-md-block mr-0 ml-auto">
+                        <div class="content3 p-3">
+                            <p class="title3 text-center" style="color: white;">Recipes</p>
+                            <p>居家料理 輕鬆上桌</p>
+                            <p class="m-0">用最完整齊備的香料，讓廚房成為您的遊戲場，因充滿創意的美味讓您更有人氣!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/fresh herbs.jpg" class="col-md-7 d-block mr-auto ml-auto p-0" alt="">
+                    <div class="col-md-3 carousel-caption text-left d-none d-md-block mr-atuo ml-0">
+                        <div class="content4 p-3">
+                            <div class="title4">Product</div>
+                            <p class="m-0">在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <a class="carousel-control-prev" href="#intro" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#intro" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+        <div class="product_title text-center my-5">Product</div>
+            
+        <div class="container">
+            <img src="./img/Chef Portrait_ Ludo Lefebvre of Trois Mec - Life & Thyme.jpg" alt="Avatar" class="image">
+            <div class="overlay">
+            <div class="text">hi</div>
+            </div>
+        </div>
+        
+          
+    </div>
+    
+</body>
+</html>
