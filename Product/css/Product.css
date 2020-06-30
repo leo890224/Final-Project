@@ -8,8 +8,70 @@ html p{
 
 body{
     background-color: #D0C8CA;
-    font-family: "Microsoft JhengHei";
+    font-family: "Microsoft JhengHei" !important;
 }
+
+.bg{
+    width: 100%;
+}
+
+.head{
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    border-color: white;
+}
+
+.fa-search:hover{
+    color: #11373f;
+}
+
+#Icon1{
+    color: white;
+}
+
+#Icon2{
+    color: white;
+}
+
+#Icon3{
+    color: white;
+}
+
+#Icon4{
+    color: white;
+}
+
+#Icon1:hover{
+    color: #00aeff;
+}
+
+#Icon2:hover{
+    color: rgb(240, 68, 134);
+}
+
+#Icon3:hover{
+    color: rgb(0, 110, 255);
+}
+
+#Icon4:hover{
+    color: rgb(128, 128, 128);
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: simsun;
+ }
+
+ .nav-item a:hover{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    color: white;
+ }
 
 .main-title{ 
     position: absolute;
@@ -21,7 +83,7 @@ body{
     color: #ffffff;
 }
 
-.btn{
+.button{
     padding: 5px;
     text-align: center;
     text-decoration: none;
@@ -54,7 +116,7 @@ body{
     color: #000000;
 }
 
-.link .btn{
+.link .button{
     height: 100%;
     width: 15%;    
     display: flex;
