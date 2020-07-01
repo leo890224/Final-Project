@@ -44,11 +44,8 @@ img{
 	margin: 30px;
 }
 
-
 .product_order{
-	font-size: 36px;
-	padding-left: 10px;
-	padding-right: 10px;	
+	font-size: 25px;
 }
 
 .product {
@@ -60,14 +57,13 @@ img{
 
 #orderlist{
 	z-index: 2;
-	/* margin:auto;
-	display: none;
-	
-	position: fixed;
-	top: 10%;	
-	left: 30%;  */
-	position: relative;;
-	width: 100%;
+    display: none;
+    position: fixed;
+    left: 30%;
+    bottom: 10%;
+    -moz-box-shadow: -2px 3px 25px #a9a9a9;
+    -webkit-box-shadow: -2px 3px 25px #a9a9a9;
+    box-shadow: -2px 3px 25px #a9a9a9;
 }
 
 #orderlist p {
@@ -75,14 +71,12 @@ img{
 }
 
 
+.cross{ /* 浮動視窗的叉叉鍵 */
+    background-color: #ffffff;
+    margin:0px;
+    cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
+.cross:hover{ /* 滑鼠移到叉叉鍵的效果 */
+    background-color: #dcdcdc;
+}

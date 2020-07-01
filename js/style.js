@@ -33,43 +33,55 @@ let userRef = db.collection("user1");
 		var value4 = parseInt(selecteItem4.options[selecteItem4.selectedIndex].value);//拿到選中項options4的value
 		var value5 = parseInt(selecteItem5.options[selecteItem5.selectedIndex].value);//拿到選中項options5的value
 		var value6 = parseInt(selecteItem6.options[selecteItem6.selectedIndex].value);//拿到選中項options6的value
-		console.log(value1,value2,value3,value4,value5,value6);
-//jQuery獲取select控制元件的value和text值
-$("#selectTest option:selected").val()
-	userRef.doc("Dish1").set({
-		"num": value1,
-		"price": 125,
-		"totalprice":value1*125
-});
-	userRef.doc("Dish2").set({
-		"num": value2,
-		"price": 150,
-		"totalprice":value2*150
-});
-	userRef.doc("Dish3").set({
-		"num": value3,
-		"price": 80,
-		"totalprice":value3*80
-});
-	userRef.doc("Dish4").set({
-		"num": value4,
-		"price": 100,
-		"totalprice":value4*100
-});
-	userRef.doc("Dish5").set({
-		"num": value5,
-		"price": 200,
-		"totalprice":value5*200
-});
-	userRef.doc("Dish6").set({
-		"num": value6,
-		"price": 250,
-		"totalprice":value6*250
-});
-	userRef.doc("totalprice").set({
-		"totalprice":value1*125+value2*150+value3*80+value4*100+value5*200+value6*250
-});
-	console.log(value1*125+value2*150+value3*80+value4*100+value5*200+value6*250);
+		console.log(value1,value2,value3,value4,value5,value6);var str = "";
+		str+="確定要購買\n"
+		if(value1>0) str += "海陸鯛魚漢堡排 "+value1+" 個\n";
+		if(value2>0) str += "鮭魚佐蒜檸奶油醬 "+value2+" 個\n"
+		if(value3>0) str += "韓式炸雞 "+value3+" 個\n"
+		if(value4>0) str += "三色魚排 "+value4+" 個\n"
+		if(value5>0) str += "西班牙風味大蒜蝦 "+value5+" 個\n"
+		if(value6>0) str += "泰式時蔬米披薩 "+value6+" 個\n"
+		str += "總共 " + String(value1*125+value2*150+value3*80+value4*100+value5*200+value6*250) + " 元嗎"
+		var r=confirm(str);
+		if(r == true){
+		$("#selectTest option:selected").val()
+			userRef.doc("Dish1").set({
+				"num": value1,
+				"price": 125,
+				"totalprice":value1*125
+		});
+			userRef.doc("Dish2").set({
+				"num": value2,
+				"price": 150,
+				"totalprice":value2*150
+		});
+			userRef.doc("Dish3").set({
+				"num": value3,
+				"price": 80,
+				"totalprice":value3*80
+		});
+			userRef.doc("Dish4").set({
+				"num": value4,
+				"price": 100,
+				"totalprice":value4*100
+		});
+			userRef.doc("Dish5").set({
+				"num": value5,
+				"price": 200,
+				"totalprice":value5*200
+		});
+			userRef.doc("Dish6").set({
+				"num": value6,
+				"price": 250,
+				"totalprice":value6*250
+		});
+			userRef.doc("totalprice").set({
+				"totalprice":value1*125+value2*150+value3*80+value4*100+value5*200+value6*250
+		});
+	}
+	else{
+		console.log("fuck");
+	}
 })
 
 
@@ -77,14 +89,39 @@ $("#selectTest option:selected").val()
 
 
 
+$(function(){
+	$("#order").click(function(){
+		console.log("fuckyou3");
+		$("#orderlist").fadeIn("fast");
+	})
+	$(".cross").click(function(){
+		console.log("fuckyou4");
+	   $("#orderlist").fadeOut("fast")
+	})
+	$("#buy").click(function(){
+		console.log("fuckyou5");
+	   $("#orderlist").fadeOut("fast")
+	})
+});
 
-$("#order").click(function(){
-	$("#orderlist").fadeIn(1000);
-})
 
-$("#buy").click(function(){
-	$("#orderlist").fadeOut(1000);
-})
+
+
+
+
+// $("#order").click(function(){
+// 	$("#orderlist").fadeIn(1000);
+// })
+
+// $("#buy").click(function(){
+// 	$("#orderlist").fadeOut(1000);
+// })
+
+
+
+
+
+
 
 
 });
