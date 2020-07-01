@@ -3,70 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <link rel="stylesheet" type="text/css" href="Product.css">
+    <link href="css/Product.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/aos.css" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/ToTop.js"></script>
+    <title>產品介紹</title>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src=".//img/logo.PNG"></a>
+    <div class="bg" style="background-color: #11373f;">
+        <button type="button" id="BackTop" class="toTop-arrow" style="z-index: 1000000;"></button>
+        <div class="head form-inline justify-content-between" style="background-color: #11373f;">
+            <a class="logo" href=""><img src="./img/logo.PNG"></a>
+            <form class="form-inline">
+                    <input class="form-control ml-auto my-3" type="search" placeholder="Search..." aria-label="Search" style="width: 20vw; border: none; border-radius: 10px;">
+                    <button class="btn btn-outline-light mr-2 ml-2 my-3" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="icon">
+                        <a href=""><i id="Icon1" class="fab fa-twitter fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon2" class="fab fa-instagram fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon3" class="fab fa-facebook-square fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon4" class="fab fa-youtube fa-lg mx-2 my-1"></i></a>
+                    </div>
+            </form>
         </div>
-        <div class="menu">
-            <div class="search_bar">
-                <span class="icon"><img src="./img/icon_search.png"></span>
-                <input type="search" id="search" placeholder="Search..." />
-            </div>
-            <div>
-                <nav>
-                    <ul class="nav_box">
-                        <li class="about"><a href="">關於我們</a></li>
-                        <li class="news"><a href="">最新消息</a></li>
-                        <li class="product"><a href="Product.html">產品介紹</a></li>
-                        <li class="receipe"><a href="recipe.html">精選食譜</a></li>
-                        <li class="question"><a href="">常見問題</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
 
-    <div class="bg_head">
-        <img src="img/head.jpg" alt="" style="width: 100%; height: 100%;">
-        <div class="text">產品介紹</div>
+        <nav class="navbar navbar-expand-xl p-0" style="background-color: #206a79;">
+    
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+    
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav justify-content-around" style="width:100%; border-bottom: 3px solid white;">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="padding: 1vh 4vw;" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Product.html">產品介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Recipe.html">精選食譜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+                <img src="img/head.jpg" alt="" style="height: 100%; width: 100%;">
+                <p class="main-title">產品介紹</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-7 mt-4" data-aos="fade-right" data-aos-anchor-placement="center-bottom" style="padding: 0;">
+                    <img src="img/pepper.jpg" alt="" style="height: 100%; width: 100%;">
+                </div>
+                <div class="col-lg-5" data-aos="zoom-out-left" data-aos-anchor-placement="center-bottom" style="padding: 2%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p style="font-size: 1.3rem; text-align: justify; color: white;">胡椒是目前世上最重要的天然食品香料，也是香料中消耗最多、最為人喜愛的一種。其原產地在印度南方之馬拉巴海岸一帶，胡椒生長區域在海平面到海拔1500英呎之熱帶地區，印尼、印度、巴西、馬來西亞、錫蘭、泰國、新加坡等都有生產。人類使用胡椒的歷史很久，自三千年前印度人即開始用胡椒，不但將它做為食品調味用，同時也是東西方最早貿易物品之一，由於胡椒經濟價值很高，中世紀甚至把胡椒當作錢幣使用。</p>
+                    <a class="button" href="">More</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-7" data-aos="fade-left" data-aos-anchor-placement="center-bottom" style="padding: 0;">
+                    <img src="img/basil.jpg" alt="" style="height: 100%; width: 100%;">
+                </div>
+                <div class="col-lg-5 order-lg-first" data-aos="zoom-out-right" data-aos-anchor-placement="center-bottom" style="padding: 2%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <p style="font-size: 1.3rem; text-align: justify; color: white;">九層塔，是很大眾化的料理用香草。原生於非洲和亞洲熱帶地區，現於東歐、南斯拉夫、賽普勒斯、法國、義大利、美國、馬達加斯加都有栽植。
+                        九層塔味道溫和略甜，有點薄荷香，也有新鮮葉片和丁香的清香，氣味隨品種不同而異。新鮮的九層塔不但好吃，還能幫助消化道機能。除了烹調的香料之外，九層塔也被當作防蟲的植物，同時也會運用在芳香療法中。</p>
+                    <a class="button" href="">More</a>
+                </div>
+            </div>
+            <div class="row my-4" data-aos="zoom-out-up" data-aos-anchor-placement="center-bottom" style="position: relative; ">
+                <img src="img/spice.jpg" alt="" style="height: 100%; width: 100%;">
+                <div class="link">
+                    <div class="text" style="font-size: 2.5rem;">所有產品</div>
+                    <a class="button" href="" style="margin: 0; font-size: 2rem;">></a>
+                </div>
+            </div>
+        </div>
+
+        <footer class="pt-3 mt-4 border-top" style="width: inherit; background-color: #206a79;">
+            <div class="foot row m-0">
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_about text-left">
+                        <h5>ABOUT</h5>
+                        <li><a class="text-decoration-none" href="">關於我們</a></li>
+                        <li><a class="text-decoration-none" href="">發展沿革</a></li>
+                        <li><a class="text-decoration-none" href="">人才招募</a></li>
+                        <li><a class="text-decoration-none" href="">聯絡我們</a></li>
+                        <li><a class="text-decoration-none" href="">隱私權政策</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_product text-left">
+                        <h5 style="padding-left: 10%;">PRODUCT</h5>
+                        <li><a class="text-decoration-none" href="Product.html">產品介紹</a></li>
+                        <li><a class="text-decoration-none" href="">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_recipes text-left">
+                        <h5>RECIPES</h5>
+                        <li><a class="text-decoration-none" href="Recipe.html">精選食譜</a></li>
+                        <li><a class="text-decoration-none" href="">名家帶路</a></li>
+                    </ul>
+                </div>
+                <div class="foot_copyright col-lg-6 p-2 border-top" style="background-color: #11373f;">
+                    <small class="h-100 p-4" style="color: white;">COPYRIGHT ©2020 ABC ENTERPRISE CO., LTD. ALL RIGHTS RESERVED.</small>
+                </div>
+                <div class="foot_icon col-lg-6 text-left p-4 border-top" style="background-color: #11373f;">
+                    <a href=""><i id="Icon1" class="fab fa-twitter fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon2" class="fab fa-instagram fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon3" class="fab fa-facebook-square fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon4" class="fab fa-youtube fa-3x mx-4 my-1"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
-    <div class="item">
-        <div class="Img">
-            <img src="img/pepper.jpg" alt="" style="height: 100%; width: 100%;">
-        </div>
-        <div class="Tbox">
-            <p style="margin: 0; ">胡椒是目前世上最重要的天然食品香料，也是香料中消耗最多、最為人喜愛的一種。其原產地在印度南方之馬拉巴(Malabar)海岸一帶，胡椒生長區域在海平面到海拔1500英呎之熱帶地區，印尼、印度、巴西、馬來西亞、錫蘭、泰國、新加坡等都有生產，巴西則是近年興起的一個生產胡椒的新地區。
-人類使用胡椒的歷史很久，自三千年前印度人即開始用胡椒，不但將它做為食品調味用，同時也是東西方最早貿易物品之一，由於胡椒經濟價值很高，中世紀甚至把胡椒當作錢幣使用。</p>
-            <a class="btn" href="" style="padding: 5px; text-align: center; text-decoration: none; font-size: 1.5rem; font-family: Microsoft JhengHei;">More</a>
-        </div>
-    </div>
-    <div class="item2">
-        <div class="Img">
-            <img src="img/basil.jpg" alt="" style="height: 100%; width: 100%;">
-        </div>
-        <div class="Tbox">
-            <p style="margin: 0; ">古希臘人稱為「香草之王」， 其原文 basilicum 在拉丁文和希臘文中都代表「帝王」，別名「九層塔」，是很大眾化的料理用香草。原生於非洲和亞洲熱帶地區，現於東歐、南斯拉夫、賽普勒斯、法國、義大利、美國、馬達加斯加都有栽植。
-又稱九層塔
-「羅勒」與「薄荷」是近親，開花的時候，花頭的排列如層層相疊之寶塔，故其別名為「九層塔」，是高產值的香草香料。羅勒味道溫和略甜，有點薄荷香，也有新鮮葉片和丁香的清香，氣味隨品種不同而異。新鮮的羅勒不但好吃，還能幫助消化道機能。除了烹調的香料之外，羅勒也被當作防蟲的植物，同時也會運用在芳香療法中。</p>
-            <a class="btn" href="" style="padding: 5px; text-align: center; text-decoration: none; font-size: 1.5rem; font-family: Microsoft JhengHei;">More</a>
-        </div>
-        </div>
-    </div>
-    <div class="rest">
-        <img src="img/spice.jpg" alt="" style="height: 100%; width: 100%;">
-        <div class="link">
-            <div class="text">所有產品</div>
-            <a class="btn" href="">></a>
-        </div>
-    </div>
+    
 </body>
-<footer>
-    <div>
-        <p style="margin: 0; font-size: 1.2rem; font-family: Microsoft JhengHei;">COPYRIGHT © 2020</p>
-    </div>
-</footer>
 </html>

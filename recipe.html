@@ -1,191 +1,469 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="recipestyle.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="background" style="background-color:black;">
-        <div class="header">
-            <div class="logo">
-                <a href="index.html"><img src="img/logo.PNG"></a>
-            </div>
-            <div class="menu">
-                <div class="search_bar">
-                    <span class="icon"><img src="./img/icon_search.png"></span>
-                    <input type="search" id="search" placeholder="Search..." />
-                </div>
-                <div>
-                    <nav>
-                        <ul class="nav_box">
-                            <li class="about"><a href="">關於我們</a></li>
-                            <li class="news"><a href="">最新消息</a></li>
-                            <li class="product"><a href="Product.html">產品介紹</a></li>
-                            <li class="receipe"><a href="recipe.html">精選食譜</a></li>
-                            <li class="question"><a href="">常見問題</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+<html lang="zh-TW">
+	<head>
+		<meta charset="UTF-8">
+		<!-- 手機版縮放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1" >
+		<title>精選食譜</title>
+		<!-- css連結 -->
+		<link href="css/style.css" rel="stylesheet">	
+		<link href="css/recipestyle.css" rel="stylesheet">	
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/all.css" rel="stylesheet">
+		<!-- JS連結 -->
+		<script src= "https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script> 
+		<script src= "https://www.gstatic.com/firebasejs/7.15.5/firebase-analytics.js"></script>
+		<script src= "https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+		<script src= "https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+		<script src= "https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script> 
+		<script src="js/jQuery.js"></script>
+		<script src="js/all.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/style.js"></script>
+		<script src="js/ToTop.js"></script>
+		
+		<div class="head form-inline justify-content-between" style="background-color: #11373f;">
+			<button type="button" id="BackTop" class="toTop-arrow" style="z-index: 1000000;"></button>
+            <a class="logo" href=""><img src="./img/logo.PNG"></a>
+            <form class="form-inline">
+                    <input class="form-control ml-auto my-3" type="search" placeholder="Search..." aria-label="Search" style="width: 20vw; border: none; border-radius: 10px;">
+                    <button class="btn btn-outline-light mr-2 ml-2 my-3" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="icon">
+                        <a href=""><i id="Icon1" class="fab fa-twitter fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon2" class="fab fa-instagram fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon3" class="fab fa-facebook-square fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon4" class="fab fa-youtube fa-lg mx-2 my-1"></i></a>
+                    </div>
+            </form>
         </div>
-        <div class="content_product">
-            <img src="img/recipemain.jpg" style="width: 100%; height: 841px;">
-            <div class="head_product" style="position: absolute; top: 20%; left: 70%; font-size: 80px; border: 3px solid white; border-radius: 20px; padding:10px 10px;">
-                Recipes
-            </div>
-            <div class="head_product" style="position: absolute; top: 40%; left: 74%; font-size: 30px;">
-                味蕾的滿足
-            </div>
-            <div class="head_product" style="position: absolute; top: 45%; left: 70%; font-size: 30px;">
-                永遠是通往幸福的捷徑
-            </div>            
-            <div class="head_product" style="position: absolute; top: 55%; left: 63%; font-size: 20px;">
-                使用者用的安心、食用者吃的健康，一直是我們的品牌責任與自我要求，透過餐桌上的美食料理，拉近家人間的情感，這是我們希望與您共同追求的幸福人生。
-            </div>
+	
+			<nav class="navbar navbar-expand-xl p-0" style="background-color: #206a79;">
+    
+				<button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				  <i class="fas fa-bars" style="color: white;"></i>
+				</button>
+		
+				<div class="collapse navbar-collapse text-center" id="navbarNav">
+					<ul class="navbar-nav justify-content-around" style="width:100%; border-bottom: 3px solid white;">
+						<li class="nav-item">
+							<a class="nav-link active" style="padding: 1vh 4vw;" href="index.html">首頁</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style="padding: 1vh 4vw;" href="#">關於我們</a>
+						</li>
+						<li class="nav-item">
+							<a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">最新消息</a>
+						</li>
+						<li class="nav-item">
+							<a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Product.html">產品介紹</a>
+						</li>
+						<li class="nav-item">
+							<a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Recipe.html">精選食譜</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" style="padding: 1vh 4vw;" href="#">常見問題</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+	</head>
+	<body class="bg" style="background-color: #11373f;">
+	
 
-        </div>
-        <div class="Frame_bg" >
-            <div class="content_recipe" style="margin-top: 0px; padding-top: 20px;">
-                <a href="" class="btn_recipe" style="text-decoration:none;width:1250px;height:50px;">
-                    <input  type="button" value="經典料理"  style="width:250px;height:50px;border:2px blue none;" >
-                    <input  type="button" value="電鍋料理" style="width:250px;height:50px;border:2px blue none;" >
-                    <input  type="button" value="異國料理" style="width:250px;height:50px;border:2px blue none;" >
-                    <input  type="button" value="台灣小吃" style="width:250px;height:50px;border:2px blue none;" >
-                    <input  type="button" value="幸福家常菜" style="width:250px;height:50px;border:2px blue none;" >
-                </a>
-            </div>
-            <hr size=6 class="separate" style="height:5px ; width: 100%; margin-top:20px; background: #a82a2a;">
-        
-            <div class="frame" style=" padding-top: 20px;">
-                <div class="Dish" >
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/steak.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;">
-                            <p class="Dish_text">海陸鯛魚漢堡排</p>
-                            <p class="Dish_text2">剛煎好的漢堡排表面看起來金黃酥脆，靠近一聞，義大利香料跟蒜味就撲鼻而來，濃郁的香氣讓人沒有一點防備，忍不住吞嚥了一口口水；一刀切下，被鎖住的肉汁立即蜂擁流出，輕輕品嘗一口，扎實的肉感、甜嫩的鯛魚跟鮮脆的洋蔥，多層次的口感，一次在口中炸開。
-                                一個不注意，偌大的肉排就這樣快速被消滅了，而鼻中似乎還殘留些許香氣。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">4人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">25分鐘</p>
-                    </div>
-                </div>
-            </div>
-            <div class="frame" style=" margin-top: 20px;">
-                <div class="Dish" >
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/fish.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;border: soild;">
-                            <p class="Dish_text">鮭魚佐蒜檸奶油醬汁</p>
-                            <p class="Dish_text2">鮭魚用玫瑰研及黑胡椒去腥，且它為油脂較為豐厚的魚種，搭配酸底的醬汁能有去油解膩的效果，用蒜風味油取代蒜頭，香氣濃郁，不會使醬汁呈現混濁色澤。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">1人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">25分鐘</p>
-                    </div>
-                </div>
-            </div>
-            <div class="frame" style=" margin-top: 20px;">
-                <div class="Dish" >
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/Koreanfriedchicken2.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;border: soild;">
-                            <p class="Dish_text">韓式炸雞</p>
-                            <p class="Dish_text2">用小磨坊辣炒醬作為韓式料理的基底調味醬，可將韓式炸雞的調味工序化繁為簡，鹹、酸、辣一次到味，
-                                再搭配濃香起司，為辣度帶來溫和、不刺激感，讓人一口接一口。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">4人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">30分鐘</p>
-                    </div>
-                </div>
-            </div>
-            <div class="frame" style="margin-top: 20px;">
-                <div class="Dish">
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/threefish.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;border: soild;">
-                            <p class="Dish_text">三色魚排</p>
-                            <p class="Dish_text2">鮪魚用蔥風味油煎過，略帶油蔥香氣；灑上香料後色彩絢麗豐富，再次進入烤箱烘烤讓香辛料的香味透過溫度釋出，香料將鮪魚的鮮甜鎖在肉中，香氣四溢；香料的多寡可以個人口味斟酌。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">1人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">35分鐘</p>
-                    </div>
-                </div>
-            </div>
-            <div class="frame" style="margin-top: 20px;">
-                <div class="Dish">
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/shrimp.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;border: soild;">
-                            <p class="Dish_text">西班牙風味大蒜蝦</p>
-                            <p class="Dish_text2">充滿鮮味與蒜香味濃郁的料理，透過香氣勾起了食欲，蝦中吸附飽滿蒜風味油的香氣，一口咬下蝦子彈牙熟成程度剛好，辣椒與蒜香在嘴裡久久不散。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">4人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">20~30分鐘</p>
-                    </div>
-                </div>
-            </div>
-            <div class="frame" style="margin-top: 20px; padding-bottom: 20px;">
-                <div class="Dish" style="margin-bottom: 20px;">
-                    <div class="Dish_photo" style="height: 300px;">
-                        <a href=""><img src="img/rice.jpg" style="width: 400px; height: 300px; border-radius: 10px;"></a>
-                    </div>
-                    <div class="Dish_text" >
-                        <div class="Dish_Introduction" style="height: 300px;border: soild;">
-                            <p class="Dish_text">泰式時蔬米披薩</p>
-                            <p class="Dish_text2">美味成敗在於烤箱的火候控制！焦香脆口的米餅，搭配清爽的蔬菜，即使僅有簡單的以玫瑰鹽及黑胡椒調味，但因米心吸附泰式甜辣醬的酸甜，因此尾韻帶點鹹甜餘韻。</p>
-                        </div>
-                        <a class="more" href="" style="color: inherit; text-decoration: none; font-size: 18px;">More...</a>
-                    </div>
-                    <div class="Dish_text">
-                        <img class="icon_people" src="img/icon_people.jpg" >
-                        <p class="text_people">4人份</p>
-                        <img class="icon_time" src="img/icon_time.jpg">
-                        <p class="text_time">40分鐘</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</body>
-<footer>
-    <div>
-        <p style="margin: 0; font-size: 18px; font-family: Microsoft JhengHei;">COPYRIGHT © 2020</p>
-    </div>
-</footer>
+		<div class="product_title text-center my-4">Recipe</div>
+		
+			<div class="container">.
+
+				
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/steak.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+					<div class="col-lg-8" >
+						<p class="product text-center">海陸鯛魚漢堡排</p>
+						<p class="text-left" style="padding: 0px;">剛煎好的漢堡排表面看起來金黃酥脆，靠近一聞，義大利香料跟蒜味就撲鼻而來，濃郁的香氣讓人沒有一點防備，忍不住吞嚥了一口口水；一刀切下，被鎖住的肉汁立即蜂擁流出，輕輕品嘗一口，扎實的肉感、甜嫩的鯛魚跟鮮脆的洋蔥，多層次的口感，一次在口中炸開。
+							一個不注意，偌大的肉排就這樣快速被消滅了，而鼻中似乎還殘留些許香氣。</p>
+						<div class="row">
+							<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+								<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+								<p >4人份</p>
+							</div>
+							<div class="col-lg-6" style="margin: 0; ">
+								<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+								<p >價格：125元</p>
+							</div>
+						</div> 
+					</div>
+				</div>
+
+				
+
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/fish.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+					<div class="col-lg-8" >
+						<p class="product text-center">鮭魚佐蒜檸奶油醬</p>
+						<p class="text-left" style="padding: 0px;">鮭魚用玫瑰研及黑胡椒去腥，且它為油脂較為豐厚的魚種，搭配酸底的醬汁能有去油解膩的效果，用蒜風味油取代蒜頭，香氣濃郁，不會使醬汁呈現混濁色澤。</p>
+						<div class="row">
+							<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+								<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+								<p >4人份</p>
+							</div>
+							<div class="col-lg-6" style="margin: 0; ">
+								<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+								<p >價格：150元</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/Koreanfriedchicken2.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+					<div class="col-lg-8" >
+						<p class="product text-center">韓式炸雞</p>
+						<p class="text-left" style="padding: 0px;">用小磨坊辣炒醬作為韓式料理的基底調味醬，可將韓式炸雞的調味工序化繁為簡，鹹、酸、辣一次到味，
+							再搭配濃香起司，為辣度帶來溫和、不刺激感，讓人一口接一口。</p>
+							<div class="row">
+								<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+									<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+									<p >4人份</p>
+								</div>
+								<div class="col-lg-6" style="margin: 0; ">
+									<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+									<p >價格：80元</p>
+								</div>
+							</div>
+					</div>
+				</div>
+
+				
+
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/threefish.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+					<div class="col-lg-8" >
+						<p class="product text-center">三色魚排</p>
+						<p class="text-left" style="padding: 0px;">鮪魚用蔥風味油煎過，略帶油蔥香氣；灑上香料後色彩絢麗豐富，再次進入烤箱烘烤讓香辛料的香味透過溫度釋出，香料將鮪魚的鮮甜鎖在肉中，香氣四溢；香料的多寡可以個人口味斟酌。</p>
+						<div class="row">
+							<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+								<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+								<p >1人份</p>
+							</div>
+							<div class="col-lg-6" style="margin: 0; ">
+								<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+								<p >價格：100元</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/shrimp.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+
+					<div class="col-lg-8" >
+						<p class="product text-center">西班牙風味大蒜蝦</p>
+						<p class="text-left" style="padding: 0px;">充滿鮮味與蒜香味濃郁的料理，透過香氣勾起了食欲，蝦中吸附飽滿蒜風味油的香氣，一口咬下蝦子彈牙熟成程度剛好，辣椒與蒜香在嘴裡久久不散。</p>
+						<div class="row" >
+						<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+							<p >4人份</p>
+						</div>
+						<div class="col-lg-6" style="margin: 0; ">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+							<p >價格：200元</p>
+						</div>
+					</div>
+					</div>
+				</div>
+
+				
+				<div class="row" style="border: 1px solid black; border-radius: 10px; padding: 0px;margin: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); width: 100%;">
+					<div class="col-lg-4" style=" padding:0 ;">
+						<a href=""><img  src="./img/rice.jpg" style="width: 100%; height: 100%; border-radius: 10px; margin-bottom: 0px;"></a>
+					</div>
+					<div class="col-lg-8" >
+						<p class="product text-center">泰式時蔬米披薩</p>
+						<p class="text-left" style="padding: 0px;">美味成敗在於烤箱的火候控制！焦香脆口的米餅，搭配清爽的蔬菜，即使僅有簡單的以玫瑰鹽及黑胡椒調味，但因米心吸附泰式甜辣醬的酸甜，因此尾韻帶點鹹甜餘韻。</p>
+						<div class="row">
+							<div class="col-lg-6 " style="margin: 0; margin-top: 30;">
+								<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;" >
+								<p >4人份</p>
+							</div>
+							<div class="col-lg-6" style="margin: 0; ">
+								<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin-bottom: 0px;">
+								<p >價格：250元</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row col-lg-12" style="display: flex; justify-content: center;">
+					<button style="border: 1px solid black; border-radius: 10px; background-color: white;" class="btn" id="order">立即下單！</button>
+				</div>
+
+
+
+
+
+
+
+
+
+
+			<div class="row m-0 text-center" id="orderlist" style="border: 1px solid black; border-radius: 10px; padding: 0px;  margin-bottom: 40px; background-color: rgb(248, 247, 243); display: none;">
+				<div class="col-lg-12">
+					<div class="row " style=" padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">海陸鯛魚漢堡排</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp4人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：125元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner1">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>
+
+
+					<div class="row " style="padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">鮭魚佐蒜檸奶油醬</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp1人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：150元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner2">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>			
+					
+					<div class="row " style="padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">韓式炸雞</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp2人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：80元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner3">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>			
+					
+					<div class="row " style="padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">三色魚排</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp1人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：100元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner4">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>			
+					
+					<div class="row " style="padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">西班牙風味大蒜蝦</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp4人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：200元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner5">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>
+					
+					<div class="row " style="padding: 0px; border-bottom: 1px solid black;">
+						<div class="col-lg-5" >
+							<p class="product_order text-center">泰式時蔬米披薩</p>
+						</div>
+						<div class="col-lg-2 row" style="margin: 0px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_people.jpg" style="width: 28px; height: 28px; margin: 0px;" >
+							<p style="margin: 0px;" >&nbsp&nbsp1人份</p>
+						</div>
+						<div class="col-lg-3 row" style="margin: 0px;  display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<img  src="./img/icon_time.jpg" style="width: 28px; height: 28px; margin: 0px;">
+							<p style="margin: 0px;">價格：250元</p>
+						</div>
+
+						<div class="col-lg-2 row" style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+							<p style="margin: 0px;">
+								訂購數量：
+							</p>
+							<select id="spinner6">  
+								<option>0</option>  
+								<option>1</option>  
+								<option>2</option>  
+								<option>3</option> 
+								<option>4</option>  
+								<option>5</option>  
+								<option>6</option> 
+								<option>7</option>  
+								<option>8</option>  
+								<option>9</option> 
+							</select>
+						</div>
+					</div>
+				</div>
+
+				<div class="row mx-auto" style=" margin: 0px;  margin-bottom: 20px; margin-top:20px;">
+					<button style="border: 1px solid black; border-radius: 10px; background-color: white;" class="btn" id="buy">下單！</button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<!--footer-->
+	<footer class="pt-3 mt-4 border-top" style="width: inherit; background-color: #206a79;">
+		<div class="foot row m-0">
+			<div class="col-lg-4 p-3">
+				<ul class="foot_about text-left">
+					<h5>ABOUT</h5>
+					<li><a class="text-decoration-none" href="">關於我們</a></li>
+					<li><a class="text-decoration-none" href="">發展沿革</a></li>
+					<li><a class="text-decoration-none" href="">人才招募</a></li>
+					<li><a class="text-decoration-none" href="">聯絡我們</a></li>
+					<li><a class="text-decoration-none" href="">隱私權政策</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 p-3">
+				<ul class="foot_product text-left">
+					<h5 style="padding-left: 10%;">PRODUCT</h5>
+					<li><a class="text-decoration-none" href="Product.html">產品介紹</a></li>
+					<li><a class="text-decoration-none" href="">常見問題</a></li>
+				</ul>
+			</div>
+			<div class="col-lg-4 p-3">
+				<ul class="foot_recipes text-left">
+					<h5>RECIPES</h5>
+					<li><a class="text-decoration-none" href="Recipe.html">精選食譜</a></li>
+					<li><a class="text-decoration-none" href="">名家帶路</a></li>
+				</ul>
+			</div>
+			<div class="foot_copyright col-lg-6 p-2 border-top" style="background-color: #11373f;">
+				<small class="h-100 p-4" style="color: white;">COPYRIGHT ©2020 ABC ENTERPRISE CO., LTD. ALL RIGHTS RESERVED.</small>
+			</div>
+			<div class="foot_icon col-lg-6 text-left p-4 border-top" style="background-color: #11373f;">
+				<a href=""><i id="Icon1" class="fab fa-twitter fa-3x mx-4 my-1"></i></a>
+				<a href=""><i id="Icon2" class="fab fa-instagram fa-3x mx-4 my-1"></i></a>
+				<a href=""><i id="Icon3" class="fab fa-facebook-square fa-3x mx-4 my-1"></i></a>
+				<a href=""><i id="Icon4" class="fab fa-youtube fa-3x mx-4 my-1"></i></a>
+			</div>
+		</div>
+	</footer>
+
 </html>
+
+
+

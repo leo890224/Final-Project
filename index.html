@@ -3,67 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/all.css" rel="stylesheet">
+
+    <script src="js/jQuery.js"></script>
+    <script src="js/all.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/ToTop.js"></script>
+    <title>首頁</title>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="index.html"><img src=".//img/logo.PNG"></a>
+    <div class="bg" style="background-color: #11373f;">
+        <button type="button" id="BackTop" class="toTop-arrow" style="z-index: 1000000;"></button>
+        <div class="head form-inline justify-content-between" style="background-color: #11373f;">
+            <a class="logo" href=""><img src="./img/logo.PNG"></a>
+            <form class="form-inline">
+                    <input class="form-control ml-auto my-3" type="search" placeholder="Search..." aria-label="Search" style="width: 20vw; border: none; border-radius: 10px;">
+                    <button class="btn btn-outline-light mr-2 ml-2 my-3" type="submit"><i class="fas fa-search"></i></button>
+                    <div class="icon">
+                        <a href=""><i id="Icon1" class="fab fa-twitter fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon2" class="fab fa-instagram fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon3" class="fab fa-facebook-square fa-lg mx-2 my-1"></i></a>
+                        <a href=""><i id="Icon4" class="fab fa-youtube fa-lg mx-2 my-1"></i></a>
+                    </div>
+            </form>
         </div>
-        <div class="menu">
-            <div class="search_bar">
-                <span class="icon"><img src="./img/icon_search.png"></span>
-                <input type="search" id="search" placeholder="Search..." />
-            </div>
-            <div>
-                <nav>
-                    <ul class="nav_box">
-                        <li class="about"><a href="">關於我們</a></li>
-                        <li class="news"><a href="">最新消息</a></li>
-                        <li class="product"><a href="Product.html">產品介紹</a></li>
-                        <li class="receipe"><a href="recipe.html">精選食譜</a></li>
-                        <li class="question"><a href="">常見問題</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <div class="content_product">
-        <img src="img/cover3.jpg" style="width: 100%; height: 100%;">
-        <div class="head_product">產品</div>
-        <div class="info" style="font-family: Microsoft JhengHei;">
-            <span class="about_product" style="color: white; font-size: 20px;">在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</span>
-            <a class="btn_product" href="Product.html" style="text-decoration: none; color: white; font-size: 40px;">></a>
-        </div>
-    </div>
-    <div class="receipe_about">
-        <div class="area">
-            <div class="Img">
-                <img src="img/receipe.jpg" style="width: 100%; height: 100%;">
-            </div>
-            <div class="content_receipe">
-                <span class="red_triangle"></span>
-                <span class="red" style="font-size: 20px; font-family: Microsoft JhengHei; color: white;">
-                    <span class="title_receipe" style="font-size: 24px;">居家料理，輕鬆上桌</span><br>
-                    <span class="about_receipe">用最完整齊備的香料，讓廚房成為您的遊戲場，因充滿創意的美味讓您更有人氣!</span><br>
-                    <span class="btn_receipe"><a href="recipe.html" style="text-decoration: none; color: black; background-color: palevioletred;">精選食譜</a></span>
-                </span>
-            </div>
-        </div>
-        <div class="area2">
-            <div class="Img">
-                <img src="img/about us.jpg" style="width: 100%; height: 100%;">
-            </div>
-            <span class="yellow_triangle"></span>
-        <a class="content_about" href="" style="text-decoration: none; color: inherit; font-family: Microsoft JhengHei; font-size: 70px; display: flex; justify-content: center;">關於我們</a>
-        </div>
-    </div>
 
-</body>
-<footer>
-    <div>
-        <p style="margin: 0; font-size: 18px; font-family: Microsoft JhengHei;">COPYRIGHT © 2020</p>
+        <nav class="navbar navbar-expand-xl p-0" style="background-color: #206a79;">
+    
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <i class="fas fa-bars" style="color: white;"></i>
+            </button>
+    
+            <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav justify-content-around" style="width:100%; border-bottom: 3px solid white;">
+                    <li class="nav-item">
+                        <a class="nav-link active" style="padding: 1vh 4vw;" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">關於我們</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="#">最新消息</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Product.html">產品介紹</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="a" class="nav-link" style="padding: 1vh 4vw;" href="Recipe.html">精選食譜</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 1vh 4vw;" href="#">常見問題</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="intro" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active row">
+                    <img src="./img/Chef Portrait_ Ludo Lefebvre of Trois Mec - Life & Thyme.jpg" class="col-lg-7 d-block mr-auto ml-0 p-0" alt="">
+                    <div class="col-lg-3 carousel-caption text-left mr-0 ml-auto" style="padding-top: 20%;">
+                        <div class="content1 p-2">
+                            <p class="title1 pl-2">Ours Persistence</p>
+                            <p class="m-0 pl-2">在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/Tasty Social_ How Restaurants Can Win On Social Media And Reach More Customers.jpg" class="col-lg-7 d-block mr-0 ml-auto p-0" alt="">
+                    <div class="col-lg-3 carousel-caption text-left d-none d-md-block mr-auto ml-0 h-100" style="padding-top: 20%;">
+                        <div class="content2 p-2">
+                            <p class="title2 pl-2">About Us</p>
+                            <p class="m-0 pl-2" style="color: #fff0b4; font-weight: 500;">在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/Great British Chefs Cookbook - Great British Chefs.jpg" class="col-lg-7 d-block mr-auto ml-auto p-0" alt="">
+                    <div class="col-lg-3 carousel-caption text-left d-none d-md-block mr-0 ml-auto">
+                        <div class="content3 p-3">
+                            <p class="title3 text-center" style="color: white;">Recipes</p>
+                            <p>居家料理 輕鬆上桌</p>
+                            <p class="m-0">用最完整齊備的香料，讓廚房成為您的遊戲場，因充滿創意的美味讓您更有人氣!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item row">
+                    <img src="./img/fresh herbs.jpg" class="col-lg-7 d-block mr-auto ml-auto p-0" alt="">
+                    <div class="col-lg-3 carousel-caption text-left d-none d-md-block mr-atuo ml-0">
+                        <div class="content4 p-3">
+                            <div class="title4">Product</div>
+                            <p class="m-0" style="color:white;">在旋風似的文明腳步中，我們細心打造天然、健康、真實的創意香料，讓您用新鮮方便的香料，輕鬆、安心地為自己與家人成就充滿幸福感的美味。</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <a class="carousel-control-prev" href="#intro" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#intro" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>
+        <div class="product_title text-center my-4">Product</div>
+
+        <div class="product_overview row pb-4 m-0" style="width: inherit;">    
+            <div class="container col-lg-2 p-0">
+                <img src="./img/八角.jpg" alt="Avatar" class="image">
+                <div class="overlay" id="overlay1">
+                <div class="text text-left">八角常用作煮肉的香料，能抑制肉類的腥味，但很少單獨使用，多與其它香料混用，市售的滷包多會添加八角在裡面，功能除了去腥之外，還可賦予食物甜味和甘草味。</div>
+                </div>
+            </div>
+            <div class="container col-lg-2 p-0">
+                <img src="./img/胡椒.jpg" alt="Avatar" class="image">
+                <div class="overlay" id="overlay2">
+                <div class="text text-left">黑胡椒口味較辛辣，有刺激性香氣濃郁、油脂量高。胡椒的使用形式有整粒、碎粒狀及粉狀等方式。</div>
+                </div>
+            </div>
+            <div class="container col-lg-2 p-0">
+                <img src="./img/羅勒.jpg" alt="Avatar" class="image">
+                <div class="overlay" id="overlay3">
+                <div class="text text-left">台灣常見的羅勒有兩種：一種是青莖種，全株呈淡綠色，俗稱白骨九層塔，另一種為紫莖種，葉脈部份呈紫色，俗稱紅骨九層塔；義大利菜用的羅勒則屬於甜羅勒。</div>
+                </div>
+            </div>
+            <div class="container col-lg-2 p-0">
+                <img src="./img/紅辣椒.jpg" alt="Avatar" class="image">
+                <div class="overlay" id="overlay4">
+                <div class="text text-left">紅辣椒辣味重，有刺激性。尤其是皮薄、果實小的更是辛辣無比，其含有「辣椒素」成分，是辣椒獨特麻辣的來源。</div>
+                </div>
+            </div>
+            <div class="container col-lg-2 p-0">
+                <div class="more text-center"><p class="m-0">More...</p></div>
+                <div class="overlay_more">
+                    <a href=""><div class="text_more">></div></a>
+                </div>
+            </div>
+        </div>
+        <footer class="pt-3 mt-4 border-top" style="width: inherit; background-color: #206a79;">
+            <div class="foot row m-0">
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_about text-left">
+                        <h5>ABOUT</h5>
+                        <li><a class="text-decoration-none" href="">關於我們</a></li>
+                        <li><a class="text-decoration-none" href="">發展沿革</a></li>
+                        <li><a class="text-decoration-none" href="">人才招募</a></li>
+                        <li><a class="text-decoration-none" href="">聯絡我們</a></li>
+                        <li><a class="text-decoration-none" href="">隱私權政策</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_product text-left">
+                        <h5 style="padding-left: 10%;">PRODUCT</h5>
+                        <li><a class="text-decoration-none" href="Product.html">產品介紹</a></li>
+                        <li><a class="text-decoration-none" href="">常見問題</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 p-3">
+                    <ul class="foot_recipes text-left">
+                        <h5>RECIPES</h5>
+                        <li><a class="text-decoration-none" href="Recipe.html">精選食譜</a></li>
+                        <li><a class="text-decoration-none" href="">名家帶路</a></li>
+                    </ul>
+                </div>
+                <div class="foot_copyright col-lg-6 p-2 border-top" style="background-color: #11373f;">
+                    <small class="h-100 p-4" style="color: white;">COPYRIGHT ©2020 ABC ENTERPRISE CO., LTD. ALL RIGHTS RESERVED.</small>
+                </div>
+                <div class="foot_icon col-lg-6 text-left p-4 border-top" style="background-color: #11373f;">
+                    <a href=""><i id="Icon1" class="fab fa-twitter fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon2" class="fab fa-instagram fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon3" class="fab fa-facebook-square fa-3x mx-4 my-1"></i></a>
+                    <a href=""><i id="Icon4" class="fab fa-youtube fa-3x mx-4 my-1"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
+    
+</body>
 </html>
